@@ -29,10 +29,41 @@ body {
 .menu__previous {
     padding: 1rem;
 }
-
+.menu__links span,
+.menu__links a
+ {
+    display: block;
+}
 .menu__links {
     padding: 1rem;
+    border-bottom: #fff;
+    display: block;
+    position: relative;
+    opacity: 1;
+    transition: all ease 500ms;
+    cursor: pointer;
 }
+.menu__links--loading {
+    opacity: 0;
+    transform: translateX(-10%);
+    
+}
+.menu__links:hover {
+    background-color: #eee;
+}
+
+.menu__links::before,
+.menu__links::after {
+    content: "";
+    width: .5rem;
+    position: absolute;
+    border-bottom: 2px solid #000;
+    right: 1rem;
+    top: 50%;
+}
+.menu__links::before { transform: rotate(45deg) translate(-4px,0);}
+.menu__links::after { transform: rotate(-45deg) translate(-4px,0);}
+
 .menu__logo {
     width: 100px;
     height: 50px;
