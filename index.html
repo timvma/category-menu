@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script defer src="app.js"></script>
+</head>
+<body>
+    
+<div id="navigation">
+<button class="menu__open" @click="openMenu">MENU</button>
+<aside id="menu" ref="menu">
+    <div>
+        <button class="menu__previous" @click="back()">BACK</button>
+    </div>
+    <div class="menu__container">
+        <transition-group name="list">
+        <div class="menu__links" v-for="list in lists" :key="list">
+            <a :href="list.link" v-if="list.link">{{list.name}}</a>
+            <span v-else @click="navigate(list)">{{list.name}}</span>
+        </div>
+        </transition-group>
+    </div> 
+</aside>
+</div>
+
+</body>
+</html>

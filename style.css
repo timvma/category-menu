@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+    background-color: #333;
+}
+
+
+#menu {
+    background-color: #999;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    transition: all ease 250ms;
+}
+
+.menu--active {
+    transform: translateX(-100%);
+    transition: all ease 250ms;
+}
+
+.menu--hide .menu__footer{
+    opacity: 0;
+}
+.menu__header {
+    display: flex;
+    justify-content: space-between;
+}
+.menu__previous {
+    padding: 1rem;
+}
+
+.menu__links {
+    padding: 1rem;
+}
+.menu__logo {
+    width: 100px;
+    height: 50px;
+}
+
+
+.list-move, 
+.list-enter-active,
+.list-leave-active {
+  transition: all 0.5s ease;
+}
+
+
+.list-enter-from,
+.list-leave-to {
+    opacity: 0;
+
+}
+
+
+.list-leave-active {
+  position: absolute;
+  opacity: 0;
+}
